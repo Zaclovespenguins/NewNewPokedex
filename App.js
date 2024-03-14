@@ -43,12 +43,15 @@ export default function App() {
             headerLargeTitleStyle: {color: "black"},
             headerTitleStyle: {color: "black"},
             headerTransparent: true,
-            headerBlurEffect: 'regular'
+            headerBlurEffect: 'regular',
+              headerSearchBarOptions: {{}}
           }}
         />
         <Stack.Screen
           name="DetailView"
-          component={DetailView}/>
+          component={DetailView}
+          options={({ route }) => ({ title: route.params.title})}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
