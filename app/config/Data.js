@@ -11273,15 +11273,4 @@ export const DexData =
       "type2": "ghost",
       "descriptions": "{}",
       "img": require('../../assets/DexData/PokeImages/1025-pecharunt.png')
-    },
-    {
-      "index": 1026,
-      "ID": "1026",
-      "name": "parroot",
-      "ability1": null,
-      "ability2": null,
-      "type1": null,
-      "type2": null,
-      "descriptions": null,
-      "img": null
     }]

@@ -1,8 +1,9 @@
-import React from "react";
+import React, {useState, useContext} from "react";
 import ListView from './app/screens/ListView'
 import {createNativeStackNavigator} from "@react-navigation/native-stack"
 import {NavigationContainer} from "@react-navigation/native"
 import DetailView from "./app/screens/DetailView";
+import {SearchTermContext} from "./app/config/Context";
 
 
 // const loadDatabase = async () => {
@@ -20,18 +21,22 @@ import DetailView from "./app/screens/DetailView";
 //     await FileSystem.downloadAsync(dbUri, dbFilePath);
 //   }
 // };
+// export default function App() {
+//     const [dbLoaded, setDbLoaded] = useState(false);
+//
+//       useEffect(() => {
+//         loadDatabase()
+//           .then(() => setDbLoaded(true))
+//           .catch();
+//       }, []);
+
 const Stack = createNativeStackNavigator();
 
 export default function App() {
-    // const [dbLoaded, setDbLoaded] = useState(false);
-    //
-    //   useEffect(() => {
-    //     loadDatabase()
-    //       .then(() => setDbLoaded(true))
-    //       .catch();
-    //   }, []);
+    const [searchTerm, setSearchTerm] = useState('')
 
     return (
+        <SearchTermContext.Provider value={searchTerm}>
         <NavigationContainer>
             <Stack.Navigator>
                 <Stack.Screen
@@ -45,7 +50,10 @@ export default function App() {
                         headerTransparent: true,
                         headerBlurEffect: 'regular',
                         headerSearchBarOptions: {
-                            placeHolder: "Search"
+                            placeHolder: "Search",
+                            onChangeText: (e) => {
+                                setSearchTerm(e.nativeEvent.text)
+                            },
                         }
                     }}
                 />
@@ -56,6 +64,7 @@ export default function App() {
                 />
             </Stack.Navigator>
         </NavigationContainer>
+        </SearchTermContext.Provider>
     );
 }
 
