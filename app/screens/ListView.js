@@ -5,6 +5,7 @@ import {LinearGradient} from 'expo-linear-gradient';
 import {properName} from "../config/FormatFunctions";
 import {typeGradients, typeGradientsImages} from "../config/colors";
 import {DexData} from "../config/Data";
+import {SearchBar} from "react-native-screens";
 
 export default function ListView({navigation: {navigate}}) {
 
