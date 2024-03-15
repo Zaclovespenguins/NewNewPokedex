@@ -42,9 +42,8 @@ async function initReactStorageDatabase() {
       id: DexData[i].index,
       data: DexData[i]
     })
-      .then((ret) => console.log(`saved ${ret}`))
+      .then((r) => console.log(`saved entry`))
       .catch((e) => console.log(e))
-    console.log(DexData[i].index)
   }
 }
 
@@ -68,7 +67,7 @@ async function printReactStorageDatabase() {
 
 function deleteReactStorageDatabase() {
   PokemonEntries.clearMap()
-    .then(r => console.log(r))
+    .then(r => console.log('Cleared PokemonEntries'))
     .catch(e => console.log(e))
 }
 

@@ -84,7 +84,7 @@ export default function ListView({navigation: {navigate}}) {
 
   return (
     <FlatList
-      data={recievedData()}
+      data={DexData.filter((item) => item.name.toUpperCase().includes(SearchTerm.toUpperCase()))}
       renderItem={({item}) => <Entry item={item}/>}
       keyExtractor={item => item.name}
       contentInsetAdjustmentBehavior="automatic"
