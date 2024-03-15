@@ -1,10 +1,13 @@
-import React, {useState, useContext} from "react";
-import ListView from './app/screens/ListView'
+import React, {useState} from "react";
 import {createNativeStackNavigator} from "@react-navigation/native-stack"
 import {NavigationContainer} from "@react-navigation/native"
+
+import ListView from './app/screens/ListView'
 import DetailView from "./app/screens/DetailView";
 import {SearchTermContext} from "./app/config/Context";
-import {StatusBar} from "react-native";
+import {Button, StatusBar, View} from "react-native";
+import {DexData} from "./app/config/Data";
+import {PokemonEntries} from "./app/config/Storage";
 
 
 // const loadDatabase = async () => {
@@ -31,42 +34,88 @@ import {StatusBar} from "react-native";
 //           .catch();
 //       }, []);
 
+
+async function initReactStorageDatabase() {
+  for (let i = 0; i < DexData.length; i++) {
+    PokemonEntries.save({
+      key: "pokemon",
+      id: DexData[i].index,
+      data: DexData[i]
+    })
+      .then((ret) => console.log(`saved ${ret}`))
+      .catch((e) => console.log(e))
+    console.log(DexData[i].index)
+  }
+}
+
+async function printReactStorageDatabase() {
+  // PokemonEntries.getAllDataForKey("pokemon").then(ids => console.log(ids))
+  const testData = await PokemonEntries.load({
+    key: "pokemon",
+    id: 20,
+    autoSync: false,
+    syncInBackground: false,
+  })
+    .then(r => {
+      return r
+    })
+    .catch(e => {
+      return e
+    })
+  console.log(testData)
+  return testData
+}
+
+function deleteReactStorageDatabase() {
+  PokemonEntries.clearMap()
+    .then(r => console.log(r))
+    .catch(e => console.log(e))
+}
+
+
 const Stack = createNativeStackNavigator();
 
 export default function App() {
-    const [searchTerm, setSearchTerm] = useState('')
+  const [searchTerm, setSearchTerm] = useState('')
 
-    return (
-        <SearchTermContext.Provider value={searchTerm}>
-        <NavigationContainer>
-            <StatusBar style="auto" />
-            <Stack.Navigator>
-                <Stack.Screen
-                    name="ListView"
-                    component={ListView}
-                    options={{
-                        headerTitle: 'Pokedex',
-                        headerLargeTitle: true,
-                        headerLargeTitleStyle: {color: "black"},
-                        headerTitleStyle: {color: "black"},
-                        headerTransparent: true,
-                        headerBlurEffect: 'regular',
-                        headerSearchBarOptions: {
-                            placeHolder: "Search",
-                            onChangeText: (e) => {
-                                setSearchTerm(e.nativeEvent.text)
-                            },
-                        }
-                    }}
-                />
-                <Stack.Screen
-                    name="DetailView"
-                    component={DetailView}
-                    options={({route}) => ({title: route.params.title})}
-                />
-            </Stack.Navigator>
-        </NavigationContainer>
-        </SearchTermContext.Provider>
-    );
+  return (
+    <SearchTermContext.Provider value={searchTerm}>
+      <NavigationContainer>
+        <StatusBar style="auto"/>
+        <Stack.Navigator>
+          <Stack.Screen
+            name="ListView"
+            component={ListView}
+            options={{
+              headerTitle: 'Pokedex',
+              headerLargeTitle: true,
+              headerLargeTitleStyle: {color: "black"},
+              headerTitleStyle: {color: "black"},
+              headerTransparent: true,
+              headerBlurEffect: 'regular',
+              headerRight: () => (
+                <View style={{flexDirection: 'row'}}>
+                  <Button onPress={() => initReactStorageDatabase()} title="ref db"/>
+                  <Button onPress={() => printReactStorageDatabase()} title="print db"/>
+                  <Button onPress={() => deleteReactStorageDatabase()} title="del db"/>
+                </View>
+              ),
+              headerSearchBarOptions: {
+                placeHolder: "Search",
+                onChangeText: (e) => {
+                  setSearchTerm(e.nativeEvent.text)
+                },
+              }
+            }}
+          />
+          <Stack.Screen
+            name="DetailView"
+            component={DetailView}
+            options={({route}) => ({title: route.params.title})}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </SearchTermContext.Provider>
+  );
 }
 

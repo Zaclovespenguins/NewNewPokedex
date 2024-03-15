@@ -5,7 +5,7 @@ PODS:
     - ExpoModulesCore
   - EXFont (11.10.3):
     - ExpoModulesCore
-  - Expo (50.0.11):
+  - Expo (50.0.13):
     - ExpoModulesCore
   - ExpoDocumentPicker (11.10.1):
     - ExpoModulesCore
@@ -15,7 +15,7 @@ PODS:
     - ExpoModulesCore
   - ExpoLinearGradient (12.7.2):
     - ExpoModulesCore
-  - ExpoModulesCore (1.11.10):
+  - ExpoModulesCore (1.11.12):
     - glog
     - RCT-Folly (= 2022.05.16.00)
     - React-Core
@@ -1306,12 +1306,12 @@ SPEC CHECKSUMS:
   DoubleConversion: fea03f2699887d960129cc54bba7e52542b6f953
   EXConstants: 988aa430ca0f76b43cd46b66e7fae3287f9cc2fc
   EXFont: f20669cb266ef48b004f1eb1f2b20db96cd1df9f
-  Expo: bbffa600c41f904151a925e5a214d1f4c5a79794
+  Expo: a7c9bd836cb7c86e699c2539a906c9ff873f19f8
   ExpoDocumentPicker: 70254802886e29a45d4ad25486e64b6fc9c8f0cc
   ExpoFileSystem: eecaf6796aed0f4dd20042dc2ca2cac6c4bc1185
   ExpoKeepAwake: 0f5cad99603a3268e50af9a6eb8b76d0d9ac956c
   ExpoLinearGradient: 4ad1449a2408e0435ac959076562b3921f2e32a1
-  ExpoModulesCore: b2ae7a3fc6193556273c5db90065fbe7e11c7a60
+  ExpoModulesCore: 61dc57c6e2a35f2f84baf488146db624e03af4cd
   ExpoSharing: 752ad6ae2b693de9cd4e7fddb78297bdc658b815
   ExpoSQLite: 53c9b105e0311ba775e5f2c0b700a1a83666d606
   FBLazyVector: 84f6edbe225f38aebd9deaf1540a4160b1f087d7
