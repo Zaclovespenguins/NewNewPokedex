@@ -4,6 +4,7 @@ import {createNativeStackNavigator} from "@react-navigation/native-stack"
 import {NavigationContainer} from "@react-navigation/native"
 import DetailView from "./app/screens/DetailView";
 import {SearchTermContext} from "./app/config/Context";
+import {StatusBar} from "react-native";
 
 
 // const loadDatabase = async () => {
@@ -38,6 +39,7 @@ export default function App() {
     return (
         <SearchTermContext.Provider value={searchTerm}>
         <NavigationContainer>
+            <StatusBar style="auto" />
             <Stack.Navigator>
                 <Stack.Screen
                     name="ListView"
