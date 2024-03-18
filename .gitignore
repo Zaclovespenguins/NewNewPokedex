@@ -33,6 +33,5 @@ yarn-error.*
 
 # typescript
 *.tsbuildinfo
-/ios/
 /.idea/
 

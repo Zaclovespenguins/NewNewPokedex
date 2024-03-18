@@ -1,23 +1,27 @@
+import {Appearance, StyleSheet,} from 'react-native';
+
+
+
 export const typeGradients =
   {
-    'water': ['#9EE6FE','#68ABF1'],
-    'steel': ['#B4F2FE','#79ADC2'],
-    'rock': ['#F0E6A9','#C8B78B'],
-    'psychic': ['#FCD5E3','#FE8A90'],
-    'poison': ['#F6BEFD','#C685E3'],
-    'normal': ['#FFFFFF','#D1DAE2'],
-    'ice': ['#CBFEFE','#87E3D4'],
-    'ground': ['#FEC99A','#F3915E'],
-    'grass': ['#D0FEC0','#7ED878'],
-    'ghost': ['#B5C5FF','#8293D8'],
-    'flying': ['#C5DCFE','#8FB5E6'],
-    'fire': ['#FDE0A9','#FE9D54'],
-    'fighting': ['#FEB0D0','#E46A93'],
-    'fairy': ['#FECAFE','#ED8FE7'],
-    'electric': ['#FEFF9B','#F4D23B'],
-    'dragon': ['#90DCFE','#4B9FDD'],
-    'dark': ['#CDC4F3','#A18DD5'],
-    'bug': ['#F4FEA5','#ADDF4A']
+    'water': ['#68ABF1', '#9EE6FE'],
+    'steel': ['#79ADC2', '#B4F2FE'],
+    'rock': ['#C8B78B', '#F0E6A9'],
+    'psychic': ['#FE8A90', '#FCD5E3'],
+    'poison': ['#C685E3', '#F6BEFD'],
+    'normal': ['#D1DAE2', '#FFFFFF'],
+    'ice': ['#87E3D4', '#CBFEFE'],
+    'ground': ['#F3915E', '#FEC99A'],
+    'grass': ['#7ED878', '#D0FEC0'],
+    'ghost': ['#8293D8', '#B5C5FF'],
+    'flying': ['#8FB5E6', '#C5DCFE'],
+    'fire': ['#FE9D54', '#FDE0A9'],
+    'fighting': ['#E46A93', '#FEB0D0'],
+    'fairy': ['#ED8FE7', '#FECAFE'],
+    'electric': ['#F4D23B', '#FEFF9B'],
+    'dragon': ['#4B9FDD', '#90DCFE'],
+    'dark': ['#A18DD5', '#CDC4F3'],
+    'bug': ['#ADDF4A', '#F4FEA5'],
   }
 
 export const typeGradientsImages =
@@ -41,3 +45,22 @@ export const typeGradientsImages =
     'dark': require('../../assets/DexData/BackgroundGradients/dark.png'),
     'bug': require('../../assets/DexData/BackgroundGradients/bug.png')
   }
+
+export const globalStyles = StyleSheet.create({
+  listViewEntryItem: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    borderRadius: 20
+  },
+  listViewEntryTitle: {
+    flex: 1,
+    fontSize: 28,
+    padding: 25
+  },
+  listViewEntryWrapperCustom: {
+    flex: 1,
+    padding: 3,
+  },
+});
