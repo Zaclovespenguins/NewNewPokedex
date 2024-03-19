@@ -27,7 +27,7 @@ export default function DetailView({navigation, route}) {
     db.withTransactionAsync(async () => await getData())
 
     navigation.setOptions({
-      headerShown: true
+      headerShown: false
     });
   }, [db]);
 
@@ -41,12 +41,31 @@ export default function DetailView({navigation, route}) {
       }
       return arr
     }
+    const urlName = () => {
+      if (result.name == 'nidoran♂') {
+        return 'nidoran-m'
+      } else if (result.name == 'nidoran♀') {
+        return 'nidoran-f'
+      } else {
+        return result.name
+      }
+    }
 
     return (
-      // <LinearGradient colors={gradientColor()}
-      //                 start={[x = 0, y = 1]}
-      //                 end={[x = 1, y = 0]}
-      //                 style={{flex: 1}}>
+
+      <LinearGradient colors={gradientColor()}
+                      start={[x = 0, y = 1]}
+                      end={[x = 1, y = 0]}
+                      style={{flex: 1}}>
+        <Pressable
+          onPress={() => navigation.pop()}
+          style={{top: 60, left: 30, zIndex: 1}}>
+          <Ionicons
+            name={"arrow-back"}
+            size={32}
+            backgroundColor=''
+            color={'black'}/>
+        </Pressable>
       <ScrollView contentInsetAdjustmentBehavior="automatic"
                   contentContainerStyle={[styles.container]}>
         {/*<LinearGradient colors={gradientColor()}*/}
@@ -55,7 +74,7 @@ export default function DetailView({navigation, route}) {
         {/*                style={{width: '100%'}}>*/}
           <View style={{alignItems: 'center', alignContent: 'center'}}>
             <Image source={{
-              uri: `https://img.pokemondb.net/sprites/home/normal/${result.name}.png`,
+              uri: `https://img.pokemondb.net/sprites/home/normal/${urlName()}.png`,
               width: 250,
               height: 250
             }}/>
@@ -68,13 +87,29 @@ export default function DetailView({navigation, route}) {
       {/*</LinearGradient>*/}
         <Dropdown
           options={gameList}
+          placeholder={"Pick a game"}
           onValueChange={(val) => setSelectedGame(val)}
           selectedValue = {selectedGame}
-          primaryColor={'green'}/>
-        <Text>{testText[selectedGame]}</Text>
-        {/*<Text>{result.descriptions}</Text>*/}
+          isSearchable
+          dropdownStyle={{
+            borderWidth: 0, // To remove border, set borderWidth to 0
+            width: 300,
+            alignSelf: 'center'
+          }}
+          listComponentStyles={{
+            sectionHeaderStyle: {
+              paddingVertical: 6,
+              paddingHorizontal: 12,
+              backgroundColor: typeGradients[`${result['type1']}`][0],
+              color: 'white',
+              borderRadius: 0,
+              overflow: 'hidden',
+            },
+          }}/>
+        <Text>{result.descriptions[selectedGame]}</Text>
+        <Text>{JSON.parse(result.descriptions)[selectedGame]}</Text>
       </ScrollView>
-      // </LinearGradient>
+      </LinearGradient>
     )
   }
 

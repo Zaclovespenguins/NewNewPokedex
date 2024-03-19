@@ -159,32 +159,69 @@ export function typeFontColored(typeInput) {
   }
 }
 
-export const gameList = [
-  { label: 'Blue', value:   'blue'},
-  { label:   'Yellow', value:   'yellow'},
-  { label:   'Gold', value:   'gold'},
-  { label:  'Silver', value:  'silver'},
-  { label:  'Crystal', value:  'crystal'},
-  { label:  'Ruby', value:  'ruby'},
-  { label:  'Sapphire', value:  'sapphire'},
-  { label:  'Emerald', value:  'emerald'},
-  { label:  'Fire Red', value:  'firered'},
-  { label:  'Leaf Green', value:  'leafgreen'},
-  { label:  'Diamond', value:  'diamond'},
-  { label:  'Pearl', value:  'pearl'},
-  { label:  'Platinum', value:  'platinum'},
-  { label:  'Heart Gold', value:  'heartgold'},
-  { label:  'Soul Silver', value:  'soulsilver'},
-  { label:  'Black', value:  'black'},
-  { label:  'White', value:  'white'},
-  { label:  'Black 2', value:  'black-2'},
-  { label:  'White 2', value:  'white-2'},
-  { label:  'X', value:  'x'},
-  { label:  'Y', value:  'y'},
-  { label:  'Omega Ruby', value:  'omega-ruby'},
-  { label:  'Alpha Sapphire', value:  'alpha-sapphire'},
-  { label:  'Lets Go Pikachu', value:  'lets-go-pikachu'},
-  { label:  'Lets Go Eevee', value:  'lets-go-eevee'},
-  { label:  'Sword', value:  'sword'},
-  { label:  'Shield', value:  'shield'},
+export const gameList =
+  [
+    {
+      title: 'Gameboy',
+      data: [
+        {label: 'Blue', value: 'blue'},
+        {label: 'Yellow', value: 'yellow'},
+        {label: 'Red', value: 'red'},
+      ]
+    },
+    {
+      title: 'Gameboy Color',
+      data: [
+        {label: 'Gold', value: 'gold'},
+        {label: 'Silver', value: 'silver'},
+        {label: 'Crystal', value: 'crystal'},
+      ]
+    },
+    {
+      title: 'Gameboy Advance',
+      data: [
+        {label: 'Ruby', value: 'ruby'},
+        {label: 'Sapphire', value: 'sapphire'},
+        {label: 'Emerald', value: 'emerald'},
+        {label: 'Fire Red', value: 'firered'},
+        {label: 'Leaf Green', value: 'leafgreen'},
+      ]
+    },
+    {
+      title: 'Nintendo DS',
+      data: [
+        {label: 'Diamond', value: 'diamond'},
+        {label: 'Pearl', value: 'pearl'},
+        {label: 'Platinum', value: 'platinum'},
+        {label: 'Heart Gold', value: 'heartgold'},
+        {label: 'Soul Silver', value: 'soulsilver'},
+        {label: 'Black', value: 'black'},
+        {label: 'White', value: 'white'},
+        {label: 'Black 2', value: 'black-2'},
+        {label: 'White 2', value: 'white-2'},
+      ]
+    },
+    {
+      title: 'Nintendo 3DS',
+      data: [
+        {label: 'X', value: 'x'},
+        {label: 'Y', value: 'y'},
+        {label: 'Omega Ruby', value: 'omega-ruby'},
+        {label: 'Alpha Sapphire', value: 'alpha-sapphire'},
+        {label: 'Sun', value: 'sun'},
+        {label: 'Moon', value: 'moon'},
+        {label: 'Ultra Sun', value: 'ultra-sun'},
+        {label: 'Ultra Moon', value: 'ultra-moon'},
+      ]
+    },
+    {
+      title: 'Nintendo Switch',
+      data: [
+        {label: 'Lets Go Pikachu', value: 'lets-go-pikachu'},
+        {label: 'Lets Go Eevee', value: 'lets-go-eevee'},
+        {label: 'Sword', value: 'sword'},
+        {label: 'Shield', value: 'shield'},
+        {label: 'Legends: Arceus', value: 'legends-arceus'},
+      ]
+    }
 ]

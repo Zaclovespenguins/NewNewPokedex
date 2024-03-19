@@ -68,6 +68,16 @@ export default function ListView({navigation}) {
       return arr
     }
 
+    const urlName = () => {
+      if (item.name == 'nidoran♂') {
+        return 'nidoran-m'
+      } else if (item.name == 'nidoran♀') {
+        return 'nidoran-f'
+      } else {
+        return item.name
+      }
+    }
+
     return (
       <View style={globalStyles.listViewEntryWrapperCustom}>
         <TouchableOpacity
@@ -79,7 +89,7 @@ export default function ListView({navigation}) {
                           style={globalStyles.listViewEntryItem}>
             <Text style={[globalStyles.listViewEntryTitle]}>{properName(item.name)}</Text>
             <Image
-              source={{uri: `https://img.pokemondb.net/sprites/home/normal/${item.name}.png`, width: 100, height: 100}}
+              source={{uri: `https://img.pokemondb.net/sprites/home/normal/${urlName()}.png`, width: 100, height: 100}}
               style={{flex: 1, resizeMode: 'contain', height: 100}}/>
             <Pressable
               onPress={() => toggleShiny(item.name)}

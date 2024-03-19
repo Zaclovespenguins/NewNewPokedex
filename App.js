@@ -8,7 +8,7 @@ import * as FileSystem from 'expo-file-system';
 
 import ListView from './app/screens/ListView'
 import DetailView from "./app/screens/DetailView";
-import SettingsView from "./app/screens/DetailView";
+import SettingsView from "./app/screens/SettingsView";
 import {SearchTermContext} from "./app/config/Context";
 import {SQLiteProvider} from "expo-sqlite/next";
 
