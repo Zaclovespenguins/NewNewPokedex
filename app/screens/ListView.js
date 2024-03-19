@@ -24,20 +24,20 @@ export default function ListView({navigation}) {
     db.withTransactionAsync(async () => await getData())
 
     navigation.setOptions({
-      headerLeft: () => (
-        <View style={{flexDirection: 'row'}}>
-          <Pressable
-            onPress={() => navigation.navigate('SettingsView')}
-            style={({pressed}) => [
-              {
-                backgroundColor: '',
-              },]}>{({pressed}) => (
-            <Ionicons name={"settings"} size={32} backgroundColor=''
-                      color={"black"}/>
-          )}
-          </Pressable>
-        </View>
-      )
+        headerRight: () => (
+          <View style={{flexDirection: 'row'}}>
+            <Pressable
+              onPress={() => navigation.navigate('SettingsView')}
+              style={({pressed}) => [
+                {
+                  backgroundColor: '',
+                },]}>{({pressed}) => (
+              <Ionicons name={"settings"} size={32} backgroundColor=''
+                        color={"black"}/>
+            )}
+            </Pressable>
+          </View>
+        )
     });
 
   }, [db]);

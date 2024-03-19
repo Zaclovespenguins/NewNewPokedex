@@ -84,10 +84,7 @@ export default function App() {
                 <Stack.Screen
                   name="DetailView"
                   component={DetailView}
-                  options={[({route}) => ({title: route.params.title}), {
-                    headerTransparent: true,
-                    headerBlurEffect: 'regular',
-                  }]}
+                  options={({route}) => ({title: route.params.title})}
                 />
                 <Stack.Screen
                   name="SettingsView"

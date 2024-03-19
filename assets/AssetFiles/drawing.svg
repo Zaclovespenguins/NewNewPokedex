@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1080"
+   height="1080"
+   viewBox="0 0 1080 1080"
+   version="1.1"
+   id="svg1"
+   inkscape:export-filename="pokeball_semitransparent.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   sodipodi:docname="drawing.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     inkscape:zoom="0.80092593"
+     inkscape:cx="540"
+     inkscape:cy="540"
+     inkscape:window-width="1952"
+     inkscape:window-height="1572"
+     inkscape:window-x="4477"
+     inkscape:window-y="541"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       d="M 540,54.615234 A 485.38403,485.38403 0 0 0 54.615234,540 485.38403,485.38403 0 0 0 540,1025.3848 485.38403,485.38403 0 0 0 1025.3848,540 485.38403,485.38403 0 0 0 540,54.615234 Z m 0,325.873046 A 159.5112,159.5112 0 0 1 699.48437,539.375 h 319.96093 v 1.25 H 699.42969 A 159.5112,159.5112 0 0 1 540,699.51172 159.5112,159.5112 0 0 1 380.57031,540.625 H 60.554687 v -1.25 H 380.57031 A 159.5112,159.5112 0 0 1 540,380.48828 Z"
+       style="fill:none;stroke:#7e7e7e;stroke-width:80;stroke-opacity:0.374631"
+       id="path10" />
+  </g>
+</svg>
